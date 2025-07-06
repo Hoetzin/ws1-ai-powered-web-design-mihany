@@ -1,10 +1,385 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Hello Hoetzin Coding</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Advertising Agency Landing Page</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background-color: #f5f5f5;
+      color: #333;
+    }
+
+    header {
+      background-color: #111;
+      color: #fff;
+      padding: 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header nav {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    header nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    header nav a:hover {
+      color: #f39c12;
+    }
+
+    section {
+      padding: 80px 20px;
+      text-align: center;
+      background-color: #fff;
+      border-bottom: 1px solid #ddd;
+    }
+
+    section:nth-child(even) {
+      background-color: #f0f0f0;
+    }
+
+    footer {
+      background-color: #111;
+      color: #fff;
+      text-align: center;
+      padding: 30px 20px;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      font-size: 2em;
+    }
+
+    p {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    .section-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.text-content {
+  flex: 1 1 400px;
+  text-align: left;
+}
+
+.image-content {
+  flex: 1 1 400px;
+}
+
+.image-content img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.about-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about-content p {
+  margin: 20px 0;
+  font-size: 1.1em;
+}
+
+.about-content img {
+  max-width: 100%;
+  height: auto;
+  margin: 20px 0;
+  border-radius: 8px;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  max-width: 1200px;
+  margin: 40px auto 0;
+  padding: 0 20px;
+}
+
+@media (max-width: 768px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.service-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+}
+
+.service-card img {
+  max-width: 100px;
+  height: auto;
+  margin-bottom: 15px;
+}
+
+.service-card h3 {
+  margin-bottom: 10px;
+  font-size: 1.2em;
+}
+
+.service-card p {
+  font-size: 0.95em;
+  color: #555;
+}
+
+.stats-list {
+  max-width: 900px;
+  margin: 40px auto 0;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.stat-row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  padding-left: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.stat-row img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+
+.stat-row h3 {
+  margin-bottom: 5px;
+  font-size: 1.2em;
+}
+
+.stat-row p {
+  font-size: 0.95em;
+  color: #555;
+}
+
+.contact-form {
+  max-width: 600px;
+  margin: 40px auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 0 20px;
+}
+
+.contact-form label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1em;
+  width: 100%;
+}
+
+.contact-form button {
+  padding: 12px;
+  background-color: #111;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #f39c12;
+}
+  </style>
 </head>
 <body>
-    <h1>Hello Hoetzin Coding</h1>
+
+  <header>
+    <nav>
+      <a href="#section1">Home</a>
+      <a href="#section2">About</a>
+      <a href="#section3">Services</a>
+      <a href="#section4">Portfolio</a>
+      <a href="#section5">Contact</a>
+    </nav>
+  </header>
+
+<section id="section1">
+  <div class="section-content">
+    <div class="text-content">
+      <h2>Welcome to Our Advertising Agency</h2>
+      <p>We create impactful, data-driven campaigns to elevate your brand visibility and connect with your target audience effectively.</p>
+    </div>
+    <div class="image-content">
+      <img src="https://cdn-p.smehost.net/sites/28d35d54a3c64e2b851790a18a1c4c18/wp-content/uploads/2017/04/19870831_bad_album.jpg" alt="Michael Jackson" />
+    </div>
+  </div>
+</section>
+
+<section id="section2">
+  <h2>About Us</h2>
+  <div class="about-content">
+    <p>We are a full-service advertising agency passionate about building meaningful brands through strategy, creativity, and media.</p>
+    
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdBoIOqEa36iKZviSBgepCkKpQXEvQKeOUlA&s" alt="About Michael Jackson" />
+
+    <p>Our mission is to help businesses thrive in the digital age with compelling campaigns that drive results and engagement.</p>
+  </div>
+</section>
+
+<section id="section3">
+  <h2>Our Services</h2>
+  <p>From digital marketing to branding, we cover it all.</p>
+
+  <div class="services-grid">
+    <div class="service-card">
+      <img src="https://placehold.co/300x200" alt="Service 1">
+      <h3>Social Media Marketing</h3>
+      <p>Engage and grow your audience on platforms like Instagram, Facebook, and LinkedIn.</p>
+    </div>
+    <div class="service-card">
+      <img src="https://placehold.co/300x200" alt="Service 2">
+      <h3>SEO Optimization</h3>
+      <p>Boost your visibility in search engines with our proven SEO strategies.</p>
+    </div>
+    <div class="service-card">
+      <img src="https://placehold.co/300x200" alt="Service 3">
+      <h3>Brand Strategy</h3>
+      <p>Create a memorable identity with strategic branding that resonates.</p>
+    </div>
+    <div class="service-card">
+      <img src="https://placehold.co/300x200" alt="Service 4">
+      <h3>Content Creation</h3>
+      <p>Professional copywriting and visual content to tell your brand story.</p>
+    </div>
+    <div class="service-card">
+      <img src="https://placehold.co/300x200" alt="Service 5">
+      <h3>Pay-Per-Click Ads</h3>
+      <p>Targeted advertising on Google, YouTube, and social platforms.</p>
+    </div>
+    <div class="service-card">
+      <img src="https://placehold.co/300x200" alt="Service 6">
+      <h3>Email Campaigns</h3>
+      <p>Engage your audience and boost conversions with smart email marketing.</p>
+    </div>
+  </div>
+</section>
+
+<section id="section4">
+  <h2>Portfolio</h2>
+  <p>Check out our recent projects and client success stories.</p>
+
+  <div class="stats-list">
+    <div class="stat-row">
+      <img src="https://placehold.co/150x150" alt="Stat 1">
+      <div>
+        <h3>500+ Campaigns Launched</h3>
+        <p>Successfully executed high-impact campaigns across various industries.</p>
+      </div>
+    </div>
+    <div class="stat-row">
+      <img src="https://placehold.co/150x150" alt="Stat 2">
+      <div>
+        <h3>200 Happy Clients</h3>
+        <p>Trusted by businesses of all sizes to deliver results-driven strategies.</p>
+      </div>
+    </div>
+    <div class="stat-row">
+      <img src="https://placehold.co/150x150" alt="Stat 3">
+      <div>
+        <h3>95% Client Retention</h3>
+        <p>We build long-term relationships through consistent value and support.</p>
+      </div>
+    </div>
+    <div class="stat-row">
+      <img src="https://placehold.co/150x150" alt="Stat 4">
+      <div>
+        <h3>1M+ Ad Impressions</h3>
+        <p>Massive digital reach through optimized media planning and delivery.</p>
+      </div>
+    </div>
+    <div class="stat-row">
+      <img src="https://placehold.co/150x150" alt="Stat 5">
+      <div>
+        <h3>50+ Brand Revamps</h3>
+        <p>Transformed brand identities to match modern market demands.</p>
+      </div>
+    </div>
+    <div class="stat-row">
+      <img src="https://placehold.co/150x150" alt="Stat 6">
+      <div>
+        <h3>10 Years of Experience</h3>
+        <p>A decade of delivering creative excellence in advertising and strategy.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="section5">
+  <h2>Contact Us</h2>
+  <p>Get in touch for a free consultation and let's grow your business together.</p>
+
+  <form class="contact-form">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required />
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required />
+
+    <label for="message">Message:</label>
+    <textarea id="message" name="message" rows="5" required></textarea>
+
+    <button type="submit">Submit</button>
+  </form>
+</section>
+
+  <footer>
+    <p>&copy; 2025 Your Advertising Agency. All rights reserved.</p>
+  </footer>
+
 </body>
 </html>
